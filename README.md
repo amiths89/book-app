@@ -33,7 +33,6 @@ To get started, follow these steps:
 2.  Navigate to the project directory:
 
     ```bash
-    cd book-app
     npm install
     ```
 
@@ -45,9 +44,7 @@ To get started, follow these steps:
 
 ## 3. Usage
 
-*Here's how to use the project:*
-
-To run the application, open a browser open the URL: [https://localhost:8080/library]
+To run the application, open a browser open the URL: https://localhost:8080/library
 
 ## 4. API Endpoints
 
@@ -102,9 +99,7 @@ For debugging the server code.
 
 ## 6. Testing
 
-Currently there are only 7 tests. More need to be included. While running the server locally as mentioned in the previous debugging steps. Run the following in terminal
+Currently there are only 7 tests. More need to be included. While running the server locally as mentioned in the previous debugging steps. Run the following in terminal:
 
-    ```bash
     npm run test
-    ```
 

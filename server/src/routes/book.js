@@ -48,6 +48,7 @@ const validateUpdateBook = [
 bookRouter.get('/sorted', validateSortQuery, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.warn({message: 'Validation errors in sorting route', errors: errors.array()});
     return res.status(400).json({ errors: errors.array() });
   }
   getSortedBooks(req, res);
@@ -57,6 +58,7 @@ bookRouter.get('/sorted', validateSortQuery, async (req, res) => {
 bookRouter.get('/:id', validateBookIdQuery, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.warn({message: 'Validation errors in fetch book by id route', errors: errors.array()});
     return res.status(400).json({ error: errors.array() });
   }
   getBookById(req, res);
@@ -66,6 +68,7 @@ bookRouter.get('/:id', validateBookIdQuery, async (req, res) => {
 bookRouter.post('/', validateCreateBook, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.warn({message: 'Validation errors in POST route for creating book', errors: errors.array()});
     return res.status(400).json({ errors: errors.array() });
   }
   createBook(req, res);
@@ -75,6 +78,7 @@ bookRouter.post('/', validateCreateBook, async (req, res) => {
 bookRouter.put('/:id', validateUpdateBook, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.warn({message: 'Validation errors in PUT route for updating book', errors: errors.array()});
     return res.status(400).json({ errors: errors.array() });
   }
   updateBook(req, res);
@@ -84,6 +88,7 @@ bookRouter.put('/:id', validateUpdateBook, async (req, res) => {
 bookRouter.delete('/:id', validateBookIdQuery, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    logger.warn({message: 'Validation errors in DELETE route', errors: errors.array()});
     return res.status(400).json({ errors: errors.array() });
   }
   deleteBook(req, res);

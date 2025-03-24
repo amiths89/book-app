@@ -33,7 +33,6 @@ export async function getBooks(req, res) {
 
     res.json(formattedBooks);
     logger.info({ message: 'Books fetched successfully' });
-    console.log('Books fetched successfully');
 } catch (error) {
     logger.error({ message: 'Error fetching books', error: error });
     res.status(500).json({ error: 'Internal server error' });
@@ -71,6 +70,7 @@ export async function updateBook(req, res) {
   const { title, author, pub_date, genre, isbn } = req.body;
 
   if (!title || !author || !pub_date || !genre) {
+    logger.error({message: 'Title, author, published date and genre required', error});
     return res.status(400).json({ error: 'Title, author, published date and genre required' });
   }
 
@@ -91,13 +91,14 @@ export async function updateBook(req, res) {
     );
 
     if (updatedRows === 0) {
+      logger.warn({message: 'Book not found'});
       return res.status(404).json({ error: 'Book not found' });
     }
 
     const updatedBook = await Book.findByPk(id);
     res.json(updatedBook);
   } catch (error) {
-    console.error('Error updating book:', error);
+    logger.error({message: 'Error updating book:', error});
     res.status(500).json({ error: 'Internal server error' });
   }
 }
@@ -111,7 +112,7 @@ export async function deleteBook(req, res) {
     }
     res.status(204).send();
   } catch (error) {
-    console.error('Error deleting book:', error);
+    logger.error('Error deleting book:', error)
     res.status(500).json({ error: 'Internal server error' });
   }
 }
@@ -120,6 +121,7 @@ export async function getSortedBooks(req, res) {
   const { sortBy } = req.query;
 
   if (!sortBy || (sortBy !== 'title' && sortBy !== 'author')) {
+    logger.warn('Invalid sorting parameter. Can only use title or author.')
     return res.status(400).json({ error: 'Invalid sorting parameter. Can only use title or author.' });
   }
 
@@ -149,7 +151,7 @@ export async function getSortedBooks(req, res) {
     res.json(formattedBooks);
 
   } catch (error) {
-    console.error('Error sorting books:', error);
+    logger.error('Error sorting books:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 }
@@ -162,6 +164,7 @@ export async function getBookById(req, res) {
     });
 
     if (!book) {
+      logger.warn({message: 'Book not found'});
       return res.status(404).json({ error: 'Book not found' });
     }
 

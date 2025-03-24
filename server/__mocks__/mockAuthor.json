@@ -1,0 +1,11 @@
+[
+    { "id": 1, "name": "Timothy Zahn" },
+    { "id": 2, "name": "J.R.R. Tolkien" },
+    { "id": 3, "name": "Jane Austen" },
+    { "id": 4, "name": "George Orwell" },
+    { "id": 5, "name": "Harper Lee" },
+    { "id": 6, "name": "Douglas Adams" },
+    { "id": 7, "name": "F Scott Fitzgerald" },
+    { "id": 8, "name": "Herman Melville" },
+    { "id": 9, "name": "Frank Herbert" }
+  ]

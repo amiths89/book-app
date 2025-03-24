@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "title": "Thrawn",
+      "author_id": 1,
+      "genre": "Fantasy",
+      "pub_date": "2017-07-29",
+      "isbn": "978-0525429769"
+    },
+    {
+      "id": 2,
+      "title": "The Lord of the Rings",
+      "author_id": 2,
+      "genre": "Fantasy",
+      "pub_date": "1954-07-29",
+      "isbn": "978-0618260293"
+    },
+    {
+      "id": 3,
+      "title": "Pride and Prejudice",
+      "author_id": 3,
+      "genre": "Romance",
+      "pub_date": "1813-01-28",
+      "isbn": "978-0141439518"
+    },
+    {
+      "id": 4,
+      "title": "1984",
+      "author_id": 4,
+      "genre": "Dystopian",
+      "pub_date": "1949-06-08",
+      "isbn": "978-0451524935"
+    },
+    {
+      "id": 5,
+      "title": "To Kill a Mockingbird",
+      "author_id": 5,
+      "genre": "Classic",
+      "pub_date": "1960-07-11",
+      "isbn": "978-0061120084"
+    },
+    {
+      "id": 6,
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author_id": 6,
+      "genre": "Science Fiction",
+      "pub_date": "1979-10-12",
+      "isbn": "978-0345391803"
+    },
+    {
+      "id": 7,
+      "title": "The Great Gatsby",
+      "author_id": 7,
+      "genre": "Classic",
+      "pub_date": "1925-04-10",
+      "isbn": "978-0743273565"
+    },
+    {
+      "id": 8,
+      "title": "Moby-Dick",
+      "author_id": 8,
+      "genre": "Adventure",
+      "pub_date": "1851-11-14",
+      "isbn": "978-0142437247"
+    },
+    {
+      "id": 9,
+      "title": "Dune",
+      "author_id": 9,
+      "genre": "Science Fiction",
+      "pub_date": "1965-08-01",
+      "isbn": "978-0441172719"
+    }
+  ]

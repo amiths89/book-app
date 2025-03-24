@@ -1,0 +1,56 @@
+GET http://localhost:5000/library/
+
+###
+
+POST http://localhost:5000/library/ HTTP/1.1
+content-type: application/json
+
+{
+  "title": "The Name of the Wind",
+  "author": "Patrick Rothfuss",
+  "genre": "Fantasy",
+  "pub_date": "2007-03-27",
+  "isbn": "978-0756404079"
+}
+
+###
+
+DELETE http://localhost:5000/library/10 HTTP/1.1
+
+###
+
+GET http://localhost:5000/library/sorted?sortBy=title
+
+###
+
+PUT http://localhost:5000/library/11 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "genre": "Fantasy",
+    "pub_date": "2010-03-27",
+    "isbn": "978-0756404079"
+}
+
+###
+
+POST http://localhost:5000/user/ HTTP/1.1
+content-type: application/json
+
+{
+  "username": "Amith Sethu",
+  "password": "2023667676",
+  "email": "amith.sethu@cloudmail.com"
+}
+
+###
+
+DELETE http://localhost:5000/user/4 HTTP/1.1
+
+###
+
+GET http://localhost:5000/user/3 HTTP/1.1
+
+###

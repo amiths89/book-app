@@ -11,6 +11,7 @@ services:
         volumes:
             - server-v-node-modules:/server/node_modules
             - ./logs:/app/logs
+            # - ./public:/app/public
         depends_on:
             database:
                 condition: service_healthy

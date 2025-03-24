@@ -30,7 +30,7 @@ To get started, follow these steps:
     git clone git@github.com:amiths89/book-app.git
     ```
 
-2.  Navigate to the project directory:
+2.  Navigate to the project directory and install dependancies by running this command:
 
     ```bash
     npm install

@@ -49,16 +49,11 @@ const logger = winston.createLogger({
         new winston.transports.Console({
             format: winston.format.combine(
                 winston.format.colorize(),
-                logFormat   
-            ),
-        }),
-        new winston.transports.Console({
-            format: winston.format.combine(
-                winston.format.colorize(),
-                winston.format.simple()
+                logFormat
             ),
         }),
     ],
 });
+
 
 export default logger;

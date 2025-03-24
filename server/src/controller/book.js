@@ -3,6 +3,7 @@ import Author from '../models/author.js';
 import logger from '../util/logger.js';
 
 export async function getBooks(req, res) {
+  logger.info({ message: 'Fetching books' });
   try {
     const books = await Book.findAll({
       include: [{ model: Author, attributes: ['name'] }],

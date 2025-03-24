@@ -8,9 +8,10 @@ import {
   getBookById,
 } from '../controller/book.js';
 import { query,validationResult,param,body  } from 'express-validator';
+import logger from './../util/logger.js';
 
 const bookRouter = express.Router();
-
+logger.info("Into Router");
 //Validations
 const validateSortQuery = [
   query('sortBy')

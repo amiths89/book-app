@@ -1,18 +1,18 @@
 services:
-    # server:
-    #     image: server:1.0
-    #     container_name: ${SERVER_HOST}
-    #     build:
-    #         context: ./server
-    #         dockerfile: Dockerfile
-    #     env_file: .env
-    #     ports:
-    #         - "${SERVER_PORT}:${SERVER_PORT}"
-    #     volumes:
-    #         - server-v-node-modules:/server/node_modules
-    #     depends_on:
-    #         database:
-    #             condition: service_healthy
+    server:
+        image: server:1.0
+        container_name: ${SERVER_HOST}
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        env_file: .env
+        ports:
+            - "${SERVER_PORT}:${SERVER_PORT}"
+        volumes:
+            - server-v-node-modules:/server/node_modules
+        depends_on:
+            database:
+                condition: service_healthy
     database:
         image: database:1.0
         container_name: ${POSTGRES_HOST}
@@ -34,7 +34,7 @@ services:
 
 
 volumes:
-    # server-v-node-modules:
-    #     name: "server-v-node-modules"
+    server-v-node-modules:
+        name: "server-v-node-modules"
     database-v:
         name: "database-v"

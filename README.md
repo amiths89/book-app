@@ -8,6 +8,8 @@ This is a simple book management app
 2.  **Installation**
 3.  **Usage**
 4.  **API Endpoints**
+5.  **Debugging**
+6.  **Testing**
 
 ## 1. Prerequisites
 
@@ -25,13 +27,14 @@ To get started, follow these steps:
 1.  Clone the repository:
 
     ```bash
-    git clone [https://github.com/amiths89/book-app.git](https://github.com/amiths89/book-app.git)
+    git clone git@github.com:amiths89/book-app.git
     ```
 
 2.  Navigate to the project directory:
 
     ```bash
     cd book-app
+    npm install
     ```
 
 3.  Run docker compose:
@@ -48,12 +51,60 @@ To run the application, open a browser open the URL: [https://localhost:8080/lib
 
 ## 4. API Endpoints
 
-# GET requests
-
 ### Book Endpoints
 
 *The following API endpoints are available for books:*
 
-1.  **GET /library:** Retrieves a list of books.
-2.  **GET /library/:id:** Retrieves book by id
-3.  **GET /library/sorted?sortBy={sortBy}** sorts catalog by title or author
+**GET http://localhost:8080/library/**
+
+**POST http://localhost:8080/library/**
+
+    * **Example Request:**
+        ```http
+        POST /library HTTP/1.1
+        Host: localhost:5000
+        Content-Type: application/json
+
+        {
+            "title": "The Name of the Wind",
+            "author": "Patrick Rothfuss",
+            "genre": "Fantasy",
+            "pub_date": "2010-03-27",
+            "isbn": "978-0756404079"
+        }
+        ```
+
+**DELETE http://localhost:8080/library/30**
+
+**GET http://localhost:8080/library/sorted?sortBy=title**
+
+**PUT http://localhost:8080/library/20**
+
+*The following API endpoints are available for users:*
+
+**POST http://localhost:8080/user/**
+
+**DELETE http://localhost:8080/user/4**
+
+**GET http://localhost:8080/user/3**
+
+5.  **DELETE /library/:id:** Deletes a book.
+
+## 5. Debugging
+
+For debugging the server code.
+
+1. Comment out the server block from docker-compose.yaml
+2. Replace the DB host name in .env(POSTGRES_HOST) to localhost
+3. Update the logs path as mentioned in logger.js comments
+4. Run the docker compose to start the database.
+5. Run the task Launch via NPM.
+
+## 6. Testing
+
+Currently there are only 7 tests. More need to be included. While running the server locally as mentioned in the previous debugging steps. Run the following in terminal
+
+    ```bash
+    npm run test
+    ```
+
